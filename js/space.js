@@ -5,24 +5,22 @@ let container = document.getElementById('contenedor');
 const URL = 'https://images-api.nasa.gov/search?q=';
 
 function showSearch(array) {
-    for(let item of array) {
+    for (let item of array) {
         console.log(item);
         container.innerHTML += `
-    <div class="d-flex">
-            <div class="col-md-10 offset-md-1">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src=${item.links[0].href}>
-                <div class="card-body">
-                  <h6>${item.data[0].title}</h6>
-                  <p class="card-text">${item.data[0].description_508}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    
+            <div class="col-md-4">
+                <div class="bg-light rounded p-4 my-3 mx-1 tarjeta">
+                    <div class="container-imagen h-50 w-100">
+                        <img src=${item.links[0].href} alt="${item.data[0].description_508}" class="img-fluid">
+                    </div>
+                    <h6 class="titulo pt-4">${item.data[0].title}</h6>
+                    <div class="overflow-auto pt-4">
+                        <p class="texto-tarjeta fw-light">${item.data[0].description_508}</p>
+                    </div>
                     <small class="text-muted">${item.data[0].date_created}</small>
-                  </div>
                 </div>
-              </div>
             </div>
-            `
+        `;
     }
 }
 
