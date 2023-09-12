@@ -9,13 +9,13 @@ function showSearch(array) {
         console.log(item);
         container.innerHTML += `
             <div class="col-md-4">
-                <div class="bg-light rounded p-4 my-3 mx-1 tarjeta">
+                <div class="bg-light rounded p-4 my-3 mx-1 tarjeta text-center">
                     <div class="container-imagen h-50 w-100">
-                        <img src=${item.links[0].href} alt="${item.data[0].description_508}" class="img-fluid">
+                        <img src=${item.links[0].href} alt="${item.data[0].description}" class="h-100 img-fluid">
                     </div>
                     <h6 class="titulo pt-4">${item.data[0].title}</h6>
                     <div class="overflow-auto pt-4">
-                        <p class="texto-tarjeta fw-light">${item.data[0].description_508}</p>
+                        <p class="texto-tarjeta fw-light">${item.data[0].description}</p>
                     </div>
                     <small class="text-muted">${item.data[0].date_created}</small>
                 </div>
